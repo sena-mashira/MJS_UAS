@@ -65,7 +65,7 @@
         @forelse($books as $book)
             <a href="{{ route('books.show', $book->id_buku) }}" class="book-card">
                 @if($book->cover)
-                    <img src="{{ asset('storage/' . $book->cover) }}" 
+                    <img src="{{ asset('uploads/covers/' . $book->cover) }}" 
                          alt="Cover buku {{ $book->judul }}" 
                          class="book-cover"
                          onerror="this.src='https://placehold.co/300x400/1a1a1a/d4af37?text={{ urlencode($book->judul) }}'">
