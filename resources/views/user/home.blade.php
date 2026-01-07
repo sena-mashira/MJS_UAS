@@ -46,7 +46,7 @@
             <a href="{{ route('books.show', $book->id_buku) }}" class="book-card">
                 {{-- Fixed cover image to show uploaded covers instead of placeholder --}}
                 @if($book->cover)
-                    <img src="{{ asset('storage/' . $book->cover) }}" 
+                    <img src="{{ asset('uploads/covers/' . $book->cover) }}" 
                          alt="Cover buku {{ $book->judul }}" 
                          class="book-cover">
                 @else
