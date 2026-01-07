@@ -23,7 +23,7 @@
         @forelse($favoriteBooks as $book)
             <a href="{{ route('books.show', $book->id_buku) }}" class="book-card">
                 @if($book->cover)
-                    <img src="{{ asset('uploads/covers/' . $book->cover) }}" 
+                    <img src="{{ asset('storage/' . $book->cover) }}" 
                          alt="Cover buku {{ $book->judul }}" 
                          class="book-cover">
                 @else
