@@ -20,11 +20,10 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+        ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
         cd ${{ secrets.DEPLOY_PATH }}
         git pull origin main
         composer install --no-dev --optimize-autoloader
-        php artisan key:generate --force
         php artisan migrate --force
         php artisan optimize
         EOF
